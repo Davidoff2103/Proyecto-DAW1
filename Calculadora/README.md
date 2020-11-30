@@ -1,5 +1,6 @@
 # Proyecto-DAW1
-# Proyecto-DAW1
+# Práctica de la Calculadora
+
 Este proyecto consiste en la creación de una calculadora con operaciones básicas.
 Está dividida en tres secciones, y cada una contiene unas funciones diferentes.
 
