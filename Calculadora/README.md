@@ -1,4 +1,7 @@
 # Proyecto-DAW1
+# Proyecto-DAW1
+Este proyecto consiste en la creación de una calculadora con operaciones básicas.
+Está dividida en tres secciones, y cada una contiene unas funciones diferentes.
 
 # Calculadora de WE Domotics
 
@@ -19,3 +22,5 @@
 2. Ordenar
 3. Revertir
 4. Quitar
+
+### © WE Domotics
