@@ -81,7 +81,7 @@ const editView = ( i, pelicula ) => {
 
 const showView = ( pelicula ) => {
     return `
-            La película <b> ${pelicula.titulo}</b>
+            ¡La película <b> ${pelicula.titulo}</b>
             fue dirigida por <b> ${pelicula.director}</b>!
             
             <div class="actions">
