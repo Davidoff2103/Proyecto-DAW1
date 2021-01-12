@@ -1,18 +1,18 @@
 /**
  * Monstruo al que tenemos que destruir
  */
-class Opponent extends Character {
+class Boss extends Character {
     /**
      * @param game {Game} La instancia del juego al que pertenece el oponente
      */
     constructor (game) {
-        const height = OPPONENT_HEIGHT * game.width / 100,
-            width = OPPONENT_WIDTH * game.width / 100,
+        const height = BOSS_HEIGHT * game.width / 100,
+            width = BOSS_WIDTH * game.width / 100,
             x = getRandomNumber(game.width - width / 2),
             y = 0,
-            speed = OPPONENT_SPEED,
-            myImage = OPPONENT_PICTURE,
-            myImageDead = OPPONENT_PICTURE_DEAD;
+            speed = BOSS_SPEED,
+            myImage = BOSS_PICTURE,
+            myImageDead = BOSS_PICTURE_DEAD;
 
         super(game, width, height, x, y, speed, myImage, myImageDead);
         this.direction = "R"; // Dirección hacia la que se mueve el oponente
@@ -67,8 +67,9 @@ class Opponent extends Character {
         if ( !this.dead )
         {
             this.game.score++;
-            setTimeout(() => {
-                this.game.removeOpponent();
+            setTimeout( () =>
+            {
+                this.game.endGame();
             }, 2000);
             super.collide();
         }

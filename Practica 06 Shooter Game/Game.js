@@ -17,6 +17,10 @@ class Game {
         this.opponentShots = []; // Disparos del oponente
         this.xDown = null; //  Posición en la que el usuario ha tocado la pantalla
         this.paused = false; // Indica si el juego está pausado
+        this.score = 0;
+        this.lives = 3;
+        this.scoreView = document.getElementById("scoreli");
+        this.livesView = document.getElementById("livesli");
     }
 
     /**
@@ -89,7 +93,7 @@ class Game {
         if (this.opponent) {
             document.body.removeChild(this.opponent.image);
         }
-        this.opponent = new Opponent(this);
+        this.opponent = new Boss(this);
     }
 
     /**
@@ -207,8 +211,16 @@ class Game {
      */
     endGame () {
         this.ended = true;
-        let gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE)
-        gameOver.render();
+        if ( this.lives <= 0 )
+        {
+            let gameOver = new Entity( this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE )
+            gameOver.render();
+        }
+        else
+        {
+            let youWin = new Entity( this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, YOU_WIN_PICTURE )
+            youWin.render();
+        }
     }
 
     /**
@@ -236,6 +248,8 @@ class Game {
             });
             this.checkCollisions();
             this.render();
+            this.scoreView.innerHTML = "Score: " + this.score;
+            this.livesView.innerHTML= "Lives: " + this.lives;
         }
     }
 
