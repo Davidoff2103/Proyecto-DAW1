@@ -1,7 +1,22 @@
 html {
   overflow: hidden;
-}
+  background-image:url("https://image.freepik.com/vector-gratis/fondo-pantalla-tecnologia-futurista_23-2148400307.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+background-attachment: fixed;
 
+}
+body li{
+	margin-left: 10%;
+}
+body div ul {
+	border: 3px solid black;
+	background: white;
+	height: 40px;
+	width: 200px;
+	padding: 5px;
+}
 .Opponent {
 	animation: rotation 3s infinite linear;
 	-webkit-animation: rotation 3s infinite linear;
@@ -31,4 +46,12 @@ html {
 	outline: none;
 	font-family: monospace;
 	cursor: pointer;
+}
+body button {
+	border-radius: 5%;
+}
+body button:hover {
+	background-color: blue;
+	border-radius: 10%;
+	color: white;
 }
