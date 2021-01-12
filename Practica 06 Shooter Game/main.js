@@ -24,21 +24,20 @@ const OPPONENT_HEIGHT = 5,
     SHOT_PICTURE_PLAYER = "assets/shot1.png",
     SHOT_PICTURE_OPPONENT = "assets/shot2.png",
     SHOT_WIDTH = 1.5;
-    DEFAULT_LIVES = 3;
+DEFAULT_LIVES = 3;
 
-function getRandomNumber (range) {
-    return Math.floor(Math.random() * range);
+function getRandomNumber( range ) {
+    return Math.floor( Math.random() * range );
 }
 
-function collision (div1, div2) {
+function collision( div1, div2 ) {
     const a = div1.getBoundingClientRect(),
         b = div2.getBoundingClientRect();
-    return !(a.bottom < b.top || a.top > b.bottom || a.right < b.left || a.left > b.right);
+    return !( a.bottom < b.top || a.top > b.bottom || a.right < b.left || a.left > b.right );
 
 }
 var game;
-document.addEventListener("DOMContentLoaded", () => {
-        game = new Game();
-        game.start();
-    }
-);
+document.addEventListener( "DOMContentLoaded", () => {
+    game = new Game();
+    game.start();
+} );
